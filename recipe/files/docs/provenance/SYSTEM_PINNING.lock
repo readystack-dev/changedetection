@@ -1,0 +1,12 @@
+libxslt1.1
+locales
+poppler-utils
+file
+zlib1g
+libglib2.0-0t64
+libsm6
+libxext6
+libxrender1
+ca-certificates
+curl
+tzdata

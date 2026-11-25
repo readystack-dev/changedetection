@@ -1,0 +1,155 @@
+{
+  "apt_refresh": [
+    {
+      "min_version": "2.8.4ubuntu0.1",
+      "package": "apt",
+      "reason": "CVE-2026-109518: apt 2.8.3 -> 2.8.4ubuntu0.1"
+    },
+    {
+      "min_version": "2.8.4ubuntu0.1",
+      "package": "libapt-pkg6.0t64",
+      "reason": "CVE-2026-109518: libapt-pkg6.0t64 2.8.3 -> 2.8.4ubuntu0.1"
+    },
+    {
+      "min_version": "10.42-4ubuntu2.2",
+      "package": "libpcre2-8-0",
+      "reason": "CVE-2026-103111, CVE-2026-86145, CVE-2026-89156, CVE-2026-89157 \u2026: libpcre2-8-0 10.42-4ubuntu2.1 -> 10.42-4ubuntu2.2"
+    },
+    {
+      "min_version": "5.38.2-3.2ubuntu0.7",
+      "package": "perl-base",
+      "reason": "USN-9006-1: perl-base 5.38.2-3.2ubuntu0.6 -> 5.38.2-3.2ubuntu0.7"
+    },
+    {
+      "min_version": "2.39-0ubuntu8.12",
+      "package": "libc-bin",
+      "reason": "UBUNTU-CVE-2026-84243: libc-bin 2.39-0ubuntu8.9 -> 2.39-0ubuntu8.12"
+    },
+    {
+      "min_version": "2.39-0ubuntu8.12",
+      "package": "libc6",
+      "reason": "UBUNTU-CVE-2026-84243: libc6 2.39-0ubuntu8.9 -> 2.39-0ubuntu8.12"
+    },
+    {
+      "min_version": "2.39-0ubuntu8.12",
+      "package": "locales",
+      "reason": "UBUNTU-CVE-2026-84243: locales 2.39-0ubuntu8.9 -> 2.39-0ubuntu8.12"
+    },
+    {
+      "min_version": "0.10.6-2ubuntu0.6",
+      "package": "libssh-4",
+      "reason": "USN-9187-1: libssh-4 0.10.6-2ubuntu0.5 -> 0.10.6-2ubuntu0.6"
+    }
+  ],
+  "build_method": "source-rebuild-python",
+  "chain_id": 1232,
+  "dep_bumps": [],
+  "expected_residuals": [],
+  "images": [
+    {
+      "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+      "ref": "ubuntu:24.04",
+      "role": "builder"
+    },
+    {
+      "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+      "ref": "ubuntu:24.04",
+      "role": "base"
+    }
+  ],
+  "mod_replaces": [],
+  "runtime_packages": [
+    "libxslt1.1",
+    "locales",
+    "poppler-utils",
+    "file",
+    "zlib1g",
+    "libglib2.0-0t64",
+    "libsm6",
+    "libxext6",
+    "libxrender1",
+    "ca-certificates",
+    "curl",
+    "tzdata"
+  ],
+  "schema": "kitforge.toolchain_lock.v1",
+  "slug": "changedetection",
+  "source": {
+    "app_copies": [
+      {
+        "dst": "/app/changedetectionio",
+        "src": "changedetectionio"
+      },
+      {
+        "dst": "/app/changedetection.py",
+        "src": "changedetection.py"
+      },
+      {
+        "dst": "/app/docs/api-spec.yaml",
+        "src": "docs/api-spec.yaml"
+      }
+    ],
+    "build_env": {
+      "CRYPTOGRAPHY_DONT_BUILD_RUST": "1"
+    },
+    "build_packages": [
+      "g++",
+      "gcc",
+      "libc6-dev",
+      "libffi-dev",
+      "libjpeg-dev",
+      "libssl-dev",
+      "libxslt1-dev",
+      "make",
+      "patch",
+      "pkg-config",
+      "zlib1g-dev",
+      "git",
+      "ca-certificates"
+    ],
+    "builder_image": "ubuntu:24.04",
+    "commit": "3316f256acc5bc01708c85da83b3ee7347c503d8",
+    "commit_epoch": 1795086396,
+    "extra_pip": [
+      "litellm==1.103.9",
+      "urllib3==2.8.0",
+      "websockets==16.0"
+    ],
+    "pip_wheel_args": [
+      "--prefer-binary"
+    ],
+    "post_install_run": [
+      "mkdir -p /app/docs",
+      "pybabel compile -d /app/changedetectionio/translations",
+      "sed -i 's/^CipherString = .*/CipherString = DEFAULT@SECLEVEL=1/' /etc/ssl/openssl.cnf",
+      "python3 -c \"import glob,os,shutil; ds=glob.glob('/usr/local/**/selenium/webdriver/common',recursive=True); assert ds, 'selenium webdriver/common not found'; [shutil.rmtree(os.path.join(d,x)) for d in ds for x in ('linux-x86_64','linux-arm64','macos','windows') if os.path.isdir(os.path.join(d,x))]; [os.remove(os.path.join(d,f)) for d in ds for f in os.listdir(d) if f.startswith('selenium-manager')]\"",
+      "! find /usr/local -name 'selenium-manager*' | grep -q ."
+    ],
+    "python_runtime": {
+      "provider": "ubuntu-source",
+      "sha256": "b5796915dc45ff745cfb4e990a7e7c93d6f546328a102ce31448d69ebc37575c",
+      "version": "3.12.16"
+    },
+    "python_version": "3.12",
+    "ref": "0.70.4",
+    "repo": "https://github.com/dgtlmoon/changedetection.io",
+    "requirements_exclude": [
+      "pytest",
+      "pytest-flask",
+      "pytest-mock",
+      "pytest-xdist",
+      "ruff",
+      "pre_commit",
+      "pre-commit",
+      "dennis",
+      "litellm",
+      "pyppeteer-ng",
+      "pyppeteerstealth"
+    ],
+    "requirements_file": "requirements.txt",
+    "source_date_epoch": 1795543196,
+    "source_date_epoch_basis": "release-cut",
+    "source_date_epoch_provenance": "the time release 0.70.4-CE-ubuntu24.04-r2 was cut (2026-11-24T17:59:56Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 3316f256acc5, dated 2026-11-19T11:06:36Z (source.commit_epoch)."
+  },
+  "version": "0.70.4"
+}

@@ -1,0 +1,6 @@
+image_manifest_digest=sha256:779b99996967cfecfb493af1464d6feb2ab966155ec47dbaeef103579a342ad2
+config_digest=sha256:2191e21f93d4fccf0f0e7225dbe5ab67fc9db4a761af6475097e68ac66c4ee88
+tag=readystack/changedetection:0.70.4-CE-ubuntu24.04-r2
+probe_port=5000
+probe_path=/worker-health
+probe_timeout=180

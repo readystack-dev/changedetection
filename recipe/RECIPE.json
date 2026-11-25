@@ -1,0 +1,263 @@
+{
+ "schema": "readystack.recipe.v1",
+ "slug": "changedetection",
+ "tag": "0.70.4-CE-ubuntu24.04-r2",
+ "tarball": "ReadyStack-changedetection-0.70.4-CE-ubuntu24.04-r2.tar.gz",
+ "tarball_sha256": "3dfd003ecc1a2baa4543aada5d39e0722d5675679e1a68217f906e0f2576eb84",
+ "kit_root": "0.70.4-CE-ubuntu24.04-r2",
+ "generated_at": "2026-11-25T01:42:54Z",
+ "generator": "KitForge release/recipe_publish.py",
+ "dockerfile": "Dockerfile.offline.pinned",
+ "build_script": "BUILD_OFFLINE.sh",
+ "preview_lines": 24,
+ "pins": {
+  "upstream": {
+   "repo": "https://github.com/dgtlmoon/changedetection.io",
+   "ref": "0.70.4",
+   "commit": "3316f256acc5bc01708c85da83b3ee7347c503d8",
+   "url": "https://github.com/dgtlmoon/changedetection.io/tree/3316f256acc5bc01708c85da83b3ee7347c503d8",
+   "from": "docs/provenance/BUILD_RECIPE.json"
+  },
+  "fetches": [
+   {
+    "kind": "git",
+    "url": "https://github.com/dgtlmoon/changedetection.io",
+    "ref": "0.70.4"
+   },
+   {
+    "kind": "http",
+    "url": "https://www.python.org/ftp/python/3.12.16/Python-3.12.16.tar.xz"
+   }
+  ],
+  "bases": [
+   {
+    "ref": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+    "image": "ubuntu:24.04",
+    "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289"
+   }
+  ],
+  "toolchain": {
+   "buildkit": "moby/buildkit:v0.31.2",
+   "buildkit_image_digest": "sha256:e0e67ea9c4bb07bdef683e29f70f3b623d1eb9c82274a9ec04e6bb0511449fb0",
+   "builder_images": [
+    "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289"
+   ]
+  },
+  "build_method": "source-rebuild-python",
+  "source_date_epoch": 1795543196,
+  "source_date_epoch_utc": "2026-11-24T17:59:56Z",
+  "target": {
+   "image_manifest_digest": "sha256:779b99996967cfecfb493af1464d6feb2ab966155ec47dbaeef103579a342ad2",
+   "config_digest": "sha256:2191e21f93d4fccf0f0e7225dbe5ab67fc9db4a761af6475097e68ac66c4ee88",
+   "image": "readystack/changedetection:0.70.4-CE-ubuntu24.04-r2"
+  },
+  "checksummed_files": 2988
+ },
+ "files": [
+  {
+   "path": "BASES.tsv",
+   "size": 121,
+   "sha256": "c506d719c30d576fe42dd46d1cf2a9a05f4f3f364b41e02e4ffad3a1fc19500e",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "BUILD_OFFLINE.sh",
+   "size": 8856,
+   "sha256": "6ab4f08a6ec775b32d854f03413b30ecfe555ddba78cf0de956235f5a2a39542",
+   "lines": 162,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "CHECKSUMS.sha256",
+   "size": 423747,
+   "sha256": "c7860a3a08d98c54209688e5b46ddcb6416b750c9e323f056bb6faa070d46b3b",
+   "lines": 2988,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "DOCKERFILE_NAME.txt",
+   "size": 26,
+   "sha256": "9aadd1ede68e016a6f163c97befc5ff2fcdc8ebd4f84b108dba63cb195fa8c84",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "Dockerfile",
+   "size": 8095,
+   "sha256": "f054bede7476a332b499cf366b9d0fd064f290e47bbe2a82c1b34a6b4afd8571",
+   "lines": 70,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline",
+   "size": 8095,
+   "sha256": "f054bede7476a332b499cf366b9d0fd064f290e47bbe2a82c1b34a6b4afd8571",
+   "lines": 70,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline.pinned",
+   "size": 8095,
+   "sha256": "f054bede7476a332b499cf366b9d0fd064f290e47bbe2a82c1b34a6b4afd8571",
+   "lines": 70,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "Dockerfile.vendor",
+   "size": 8479,
+   "sha256": "878cb96acae6361cfea37289649d2a4db62ffa03a0b86ce2ee0bef4e74407732",
+   "lines": 72,
+   "public": "account"
+  },
+  {
+   "path": "FILE_MODES.tsv",
+   "size": 259022,
+   "sha256": "dfd932814b8e4bd03dcc2f501fefd65fa4fd1d9c8aff048ac34088c5d325bc3c",
+   "lines": 3348,
+   "public": "account"
+  },
+  {
+   "path": "MANIFEST.txt",
+   "size": 220593,
+   "sha256": "b9ce8c06af989cdc4d3de6dbfafa11fe1a3e2c27c1dd3c364286d22bc1a7d023",
+   "lines": 2990,
+   "public": "account"
+  },
+  {
+   "path": "README.md",
+   "size": 3346,
+   "sha256": "e9f3f723ba3e427206c18187f11e9bcbdd38ff0847d387331ea0fd447aacd2fd",
+   "lines": 39,
+   "public": "account"
+  },
+  {
+   "path": "SOURCE_DATE_EPOCH.txt",
+   "size": 11,
+   "sha256": "35505b80b192f65e83156650c8bd924bad441fe4c5f5f0f2c092ee2593083ae1",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "TARGET_DIGEST.txt",
+   "size": 296,
+   "sha256": "6cb67850c7bf8abcf362d8c662bcc7694bc8f739dabc2d98806f9c5d0ffcf787",
+   "lines": 6,
+   "public": "full"
+  },
+  {
+   "path": "VERIFY_OFFLINE.sh",
+   "size": 10153,
+   "sha256": "3e8184ea230cfd8f41f977e26be6bf7bd03112c396c517837ce0c7de4f7399dd",
+   "lines": 165,
+   "public": "account"
+  },
+  {
+   "path": "docs/PROVENANCE.md",
+   "size": 2648,
+   "sha256": "e821f640d8e2d36fb61f48d7ed37e6df0433fdd7f9207331fc6591723df67b5a",
+   "lines": 36,
+   "public": "account"
+  },
+  {
+   "path": "docs/REBUILD.md",
+   "size": 6192,
+   "sha256": "8f335c53c8cfdb1768ba7c4a6502b6b766bbed475d7a809993365eb6de15a536",
+   "lines": 60,
+   "public": "account"
+  },
+  {
+   "path": "docs/VERIFY.md",
+   "size": 2079,
+   "sha256": "0e74703610c6dbe903e09f09e6f19aed570dff88e89e467c170794f67a91a0c5",
+   "lines": 34,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/BASE_IMAGE_DIGESTS.lock",
+   "size": 58,
+   "sha256": "0a5c9a05a9505c71da098335550669a5116ac57833d965c5bec6702bdcf6e1c1",
+   "lines": 2,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/BUILD_RECIPE.json",
+   "size": 4245,
+   "sha256": "b8f67803d4ca80a96dd94cbd07cd5759790b967056f52100613a1441cb217e15",
+   "lines": 99,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/CUSTODY_INPUTS.json",
+   "size": 667,
+   "sha256": "9387629a306f136f60581d9f381185d2719be7d345717b9d7f37fce2cef897a0",
+   "lines": 17,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/SOURCE_FILE_MANIFEST.json",
+   "size": 69634,
+   "sha256": "ddd01c9fc21bf2f24433cca7fced1153e2d287ef86aa0e4ab268d34f17c752a3",
+   "lines": 1302,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/SOURCE_TREE_HASH.json",
+   "size": 325,
+   "sha256": "48f0fd105105287857f273008f821f337411f59cd229592c2be2605071d1e432",
+   "lines": 9,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/SYSTEM_PINNING.lock",
+   "size": 117,
+   "sha256": "5c8a2c451455c7c9ef2b2b588b9163a72631994aa32ed02955d5ae7c7d89f493",
+   "lines": 12,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/TOOLCHAIN.lock",
+   "size": 4857,
+   "sha256": "4c6fe76cdd2d3652799b128cea4fe102f98ffa2bf77a987d52186fcdf06ac53b",
+   "lines": 155,
+   "public": "account"
+  },
+  {
+   "path": "rebuild.json",
+   "size": 1170,
+   "sha256": "7108c95315a828a5be8a85dda50b891465cbc578f3917b9ccba51e828c2e04a6",
+   "lines": 33,
+   "public": "account"
+  },
+  {
+   "path": "toolchain/BUILDKIT_TAG.txt",
+   "size": 22,
+   "sha256": "fcd530eeb02b063d2f047adad6eef896422a8e8d558513e5f09b2a262be32573",
+   "lines": 1,
+   "public": "full"
+  }
+ ],
+ "skipped": [],
+ "kit_adds": {
+  "bases": {
+   "files": 5,
+   "bytes": 29796854
+  },
+  "docs": {
+   "files": 1352,
+   "bytes": 25367060
+  },
+  "toolchain": {
+   "files": 1,
+   "bytes": 111529472
+  },
+  "vendored": {
+   "files": 1606,
+   "bytes": 303817996
+  }
+ },
+ "redacted_files": 0
+}
